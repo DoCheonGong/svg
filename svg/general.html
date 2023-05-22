@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG - General tags</title>
+</head>
+
+<body>
+    <!--
+        SVG란?
+        컴퓨터 그래픽스의 한 분야로,
+        Scalable Vector Graphics의 앞 글자를 따왔으며
+        뜻은 가변 벡터 도형 처리
+        벡터: 크기와 방향을 동시에 나타내는 물리량
+        정의: 웹 상에서 2차원 벡터 그래픽을 표현하는 xml기반의 마크업 언어
+        xml: HTML5 이전에 HTML의 단점을 보완하기 위해서 등장한 마크업 언어
+
+        Canvas와 SVG의 공통점과 차이
+        공통점
+        - HTML5에서 새로 도입되었다
+        - 2차원 그래픽을 표현한다
+
+        차이점
+        - Canvas는 HTML 언어, SVG는 xml 언어
+        - Canvas는 픽셀 단위로 렌더링(그리기)되며,
+          한 번 이미지가 그려지고 나면, 브라우저는 해당 정보를
+          기억하지 않으므로 위치가 바뀌면 다시 렌더링 해야한다
+          해상도의 영향을 받고, 이벤트 핸들러를 지원하지 않는다
+          그래픽만 지원하므로 텍스트 출력을 지원하지 않는다
+          그래픽 관련 코딩에 특화되어, 게임이나 그래픽 관련 업무에 쓰인다
+          이미지를 png나 jpg의 형식으로 저장할 수 있다
+
+        - SVG는 그려진 이미지를 객체로 인식하므로 위치가 바뀌면
+          객체 속성이 변한 것으로 인식해서 자동으로 반영되고
+          위치가 바뀐다
+          해상도의 영향을 받지 않고, 이벤트 핸들러를 지원한다
+          범용적인(텍스트 포함) 렌더링이 필요할 때마다 사용
+          범용적인 애플리케이션에 최적화
+          SVG 형식으로 저장되며, 복잡한 그림인 경우 렌더링이 길어진다
+    -->
+    <!--
+        SVG viewport : HTML 문서에서 설정된 SVG가 표현될 공간
+        이미지 요소의 설정방법과 같이 너비, 높이로 지정한다
+        <svg width="512" height="512"> </svg>
+
+        SVG viewbox: 속성값으로 min-x, min-y, width, height
+        숫자 배열 값을 전달받는다
+        SVG viewport와 viewbox의 값이 다르면 이미지가 잘리거나
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <rect width="480" height="240" fill="#aaa" x="20" y="20" rx="20" ry="20"></rect>
+    </svg>
+    <!--
+        사각형 만들기
+        <rect width="480" height="240" fill="#aaa" x="20" y="20" rx="20" ry="20"></rect>
+        fill 안을 채우는 색상
+        x, y는 위치 속성, rx, ry는 사각형의 라운드 (둥근 모퉁이) 부여
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <circle cx="200" cy="200" r="100" fill="#666"></circle>
+    </svg>
+    <!--
+        원 만들기
+        <circle cx="200" cy="200" r="100" fill="#666"></circle>
+        원의 중심 cx, cy, 반지름 r
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <ellipse cx="200" cy="200" rx="50" ry="100" fill="#666"></ellipse>
+    </svg>
+    <!--
+        타원 만들기
+        <ellipse cx="200" cy="200" rx="50" ry="100" fill="#666"></ellipse>
+        원의 중심 cx, cy, 반지름 rx, ry
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <line x1="440" y1="40" x2="120" y2="200" stroke="#000" stroke-width="5"></line>
+    </svg>
+    <!--
+        직선 만들기
+        <line x1="440" y1="40" x2="120" y2="200" stroke="#000" stroke-width="5"></line>
+        선의 시작점 x1, y1, 끝 지점 x2, y2, 색상 stroke, 두께 stroke-width
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <polyline points="0,0 40,40 40,80 80,80 80,120 120,120 160,160" fill="none" stroke="#000" stroke-width="6">
+        </polyline>
+    </svg>
+    <!--
+        여러 개의 점을 잇는 polyline 만들기
+        <polyline points="(x1,y1) (x2,y2) (x3,y3) (x4,y4) ..." fill="none" stroke="#000" stroke-width="6">
+        </polyline>
+            점 (x, y), 채우기 색상 fill, 색상 stroke, 두께 stroke-width
+    -->
+    <svg width="512" height="512" viewBox="0 0 512 512">
+        <polygon points="50,5 100,5 125,30 125,80 100,105 50,105 25,80 25,30" fill="#000">
+        </polygon>
+    </svg>
+    <!--
+        다각형 그리기 (점을 연결해서 도형 그리기)
+        <polygon points="(x1,y1) (x2,y2) (x3,y3) (x4,y4) ..." fill="#000">
+        </polygon>
+        점 위치 (x, y), 채우기 색상 fill
+    -->
+</body>
+
+</html>

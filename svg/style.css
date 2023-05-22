@@ -1,0 +1,56 @@
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+section article {
+    width: 500px;
+    margin: 100px auto;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+section article svg {
+    width: 100%;
+}
+
+section .dog svg path {
+    fill: transparent;
+    stroke: #000;
+    stroke-dasharray: 1717;
+    stroke-dashoffset: 1717;
+    transition: stroke-dashoffset 3s 0s, fill 1s 3s;
+}
+
+section .dog:hover svg path {
+    stroke-dashoffset: 0;
+    fill: #666;
+}
+
+/*
+stroke-dasharray: 선을 dash 형태로 만든다
+값을 부여한 만큼 dash의 길이가 늘어난다
+
+path의 전체 길이가 100인데, stroke-dasharray가 50이면 절반만 보인다
+stroke-dasharray를 하나의 선 길이가 될 때까지 늘리면 그 모양의 길이가 된다
+stroke-dashoffset: svg를 나타낼 지점을 지정하는 속성
+위의 두 값을 같이 하면 그림이 보이지 않게 된다
+*/
+
+section .instagram {
+    border: none;
+}
+
+section .instagram svg path {
+    fill: transparent;
+    stroke: #000;
+    stroke-dasharray: 1565;
+    stroke-dashoffset: 1565;
+    transition: stroke-dashoffset 2s 0s, fill 1s 2s, stroke 1s 2s;
+}
+
+section .instagram:hover svg path {
+    stroke-dashoffset: 0;
+    fill: #000;
+    stroke: transparent;
+}
